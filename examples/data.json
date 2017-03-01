@@ -1,4 +1,13 @@
 {
-	"a": 1,
-	"b": 2
+    "app": "appPageName",
+    "type": "timer",
+    "url": "http://localhost/yq-web-analytics-js/examples/index.html",
+    "autotags": true,
+    "sr": "1280x800",
+    "vp": "350x658",
+    "csz": 60,
+    "uuid": 150919689,
+    "data": "{'page':{'redirect':0,'dns':0,'connect':0,'network':0,'send':3,'receive':2,'backend':5,'render':-1488381441173,'dom':47,'frontend':-1488381441126,'load':-1488381441104,'domReady':37,'interactive':37,'ttf':0,'ttr':10,'ttdns':0,'ttconnect':0,'ttfb':13}}",
+    "tags": {},
+    "version": "0.5.0"
 }
