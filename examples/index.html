@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>web-analytics</title>
+    <meta charset="UTF-8">
+    <script>
+        (function(window, mta) {
+            window.MeituanAnalyticsObject = mta;
+            window[mta] = window[mta] || function() {
+                    (window[mta].q = window[mta].q || []).push(arguments);
+                };
+        }(window, 'mta'));
+        window.onload = function () {
+            //页面名称
+            mta('create', 'appPageName');
+            //上报接口
+            mta('config', 'beaconImage', 'http://127.0.0.1:8080/requestUrl');
+            mta('send', 'page');
+        };
+    </script>
+    <script src="../dist/mta.min.js"></script>
+</head>
+
+<body>
+    <h1>web-analytics</h1>
+</body>
+</html>
+	<script></script>

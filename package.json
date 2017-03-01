@@ -1,0 +1,33 @@
+{
+  "name": "@mtfe/mta-js",
+  "version": "0.0.1",
+  "author": {
+    "name": "yongqiang.shen",
+    "email": "596704878@qq.com"
+  },
+  "scripts": {},
+  "dependencies": {
+    "connect": "^3.1.1",
+    "serve-static": "^1.5.3"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "gulp": "~3.6.2",
+    "gulp-bump": "~0.1.8",
+    "gulp-clean": "~0.2.4",
+    "gulp-concat": "~2.2.0",
+    "gulp-frep": "~0.1.1",
+    "gulp-jshint": "~1.5.3",
+    "gulp-rename": "~1.2.0",
+    "gulp-size": "^1.1.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-wrap": "~0.3.0",
+    "jshint-stylish": "latest",
+    "karma": "^0.12.16",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-mocha": "^0.1.4",
+    "mocha": "^1.20.1",
+    "sinon": "^1.10.2",
+    "sinon-chai": "^2.5.0"
+  }
+}
