@@ -497,8 +497,6 @@ Client.prototype = {
 
 
 
-/* globals util, Tracker */
-
 /**
  * 数据发送，当数据长度符合要求时发送正常beacon
  * 如果数据长度太大，发送数据长度的错误日志方便后端统计错误条数
@@ -595,7 +593,7 @@ function Tracker(config) {
 
 }
 
-Tracker.VERSION = '0.5.0';
+Tracker.VERSION = '0.0.1';
 
 /**
  * 插件管理
@@ -704,7 +702,6 @@ Tracker.prototype = {
             data = plugin.data();
             type = plugin.type;
         }
-
         var tmp = {};
         if (data) {
             tmp[key] = data;
@@ -815,14 +812,6 @@ Tracker.prototype = {
 
 };
 
-/* global Tracker */
-
-/**
- * page loading, rendering performance data
- *
- * @see https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/NavigationTiming/Overview.html
- * @see http://www.lognormal.com/blog/2013/11/11/calculating-first-paint/
- */
 
 Tracker.addPlugin('page', {
     type: 'timer',
@@ -891,7 +880,7 @@ Tracker.addPlugin('page', {
 
         // FE-5979
         if (typeof data.firstPaint !== 'number' || data.firstPaint < 0) {
-            data.firstPaint = void 0;
+            data.firstPaint = -1;
         }
 
         // 兼容原来的首屏时间

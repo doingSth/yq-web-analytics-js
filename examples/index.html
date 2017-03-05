@@ -14,8 +14,24 @@
             //页面名称
             mta('create', 'appPageName');
             //上报接口
-            mta('config', 'beaconImage', 'http://127.0.0.1:8080/requestUrl');
-            mta('send', 'page');
+            mta('config', 'beaconImage', 'http://localhost:8080/performance/report');
+            (function sendTime(){
+                var timing = performance.timing;
+                var loadTime = timing.loadEventEnd - timing.navigationStart;//过早获取时,loadEventEnd有时会是0
+                if(loadTime <= 0) {
+                    // 未加载完，延迟200ms后继续times方法，直到成功
+                    console.warn('200 ms')
+                    setTimeout(function(){
+                        sendTime();
+                    }, 200);
+                    return;
+                } else {
+                    console.warn('send')
+                    mta('send', 'waterfall');
+                    console.warn('send')
+                    mta('send', 'page');
+                }
+            })()
         };
     </script>
     <script src="../dist/mta.min.js"></script>
