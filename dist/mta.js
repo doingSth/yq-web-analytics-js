@@ -702,6 +702,7 @@ Tracker.prototype = {
             data = plugin.data();
             type = plugin.type;
         }
+
         var tmp = {};
         if (data) {
             tmp[key] = data;
@@ -880,7 +881,7 @@ Tracker.addPlugin('page', {
 
         // FE-5979
         if (typeof data.firstPaint !== 'number' || data.firstPaint < 0) {
-            data.firstPaint = -1;
+            data.firstPaint = void 0;
         }
 
         // 兼容原来的首屏时间

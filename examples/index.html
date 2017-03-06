@@ -29,12 +29,20 @@
                     console.warn('send')
                     mta('send', 'waterfall');
                     console.warn('send')
-                    mta('send', 'page');
+                    window.mta('send', 'page');
                 }
             })()
         };
     </script>
     <script src="../dist/mta.min.js"></script>
+    <script>
+        console.warn('11')
+        console.warn(window.mta)
+        setTimeout(function () {
+            console.warn('12')
+            window.mta('send', 'page');
+        },10000)
+    </script>
 </head>
 
 <body>

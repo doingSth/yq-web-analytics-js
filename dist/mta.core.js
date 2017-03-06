@@ -702,6 +702,7 @@ Tracker.prototype = {
             data = plugin.data();
             type = plugin.type;
         }
+
         var tmp = {};
         if (data) {
             tmp[key] = data;
