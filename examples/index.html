@@ -15,6 +15,24 @@
             mta('create', 'appPageName');
             //上报接口
             mta('config', 'beaconImage', 'http://localhost:8080/performance/report');
+            mta('config', 'useCombo', false);
+//            app:appPageName
+//            type:combo
+//            url:http%3A%2F%2Flocalhost%2Fyq-web-analytics-js%2Fexamples%2Findex.html
+//            autotags:true
+//            sr:1280x800
+//            vp:271x658
+//            csz:93
+//            uuid:150919689
+//            data:%5B%7B%22type%22%3A%22timer%22%2C%22data%22%3A%7B%22ajax%22%3A%7B%22url%22%3A%22urlsadasddas%22%2C%22time%22%3A%221231%22%7D%7D%2C%22tags%22%3A%7B%7D%7D%2C%7B%22type%22%3A%22timer%22%2C%22data%22%3A%7B%22ajax%22%3A%7B%22url%22%3A%22urlsadasddas2%22%2C%22time%22%3A%2212321%22%7D%7D%2C%22tags%22%3A%7B%7D%7D%5D
+//            version:0.0.1
+            mta('timing', 'personal', {
+                "key":"/ajax/p", //必填项  上报的信息的唯一key 例如url
+                "name":"121",
+                "time":"1231"
+            })
+            mta('timing', 'personal', {"key":"urlsadasddas2","name":"1212",time:"12321"});
+            window.mta('send', 'page');
             (function sendTime(){
                 var timing = performance.timing;
                 var loadTime = timing.loadEventEnd - timing.navigationStart;//过早获取时,loadEventEnd有时会是0
@@ -26,8 +44,6 @@
                     }, 200);
                     return;
                 } else {
-                    console.warn('send')
-                    mta('send', 'waterfall');
                     console.warn('send')
                     window.mta('send', 'page');
                 }
